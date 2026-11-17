@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:type" content="website">
+<meta property="og:title" content="恋愛タロット｜鏡子">
+<meta property="og:description" content="誰にも言えない恋の気持ちを、タロットで言葉にします。LINEで今月のカードを引けます。">
+<meta property="og:url" content="https://home-style-lab.github.io/kagamiko/">
+<meta property="og:image" content="https://home-style-lab.github.io/kagamiko/draw.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="628">
+<meta name="twitter:card" content="summary_large_image">
+<title>恋愛タロット｜鏡子</title>
+<meta name="description" content="誰にも言えない恋の気持ちを、タロットで言葉にします。LINEで今月のカードを引けます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap">
+<style>
+/* Layout: one quiet night, read top to bottom — the visitor's own nights first, cards second, Kagamiko last */
+:root{
+  --night:#0B1638;
+  --night-2:#111F4C;
+  --ink:#F7F2E8;
+  --ink-soft:rgba(247,242,232,.74);
+  --gold:#E3C48A;
+  --rose:#F0CFC0;
+  --line:rgba(227,196,138,.26);
+  --serif:"Zen Old Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --latin:"Cormorant Garamond","Zen Old Mincho",Georgia,serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--ink);font-family:var(--serif);font-size:16px;line-height:2;letter-spacing:.04em;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+p{margin:0}
+.wrap{max-width:620px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+section{padding-block:84px}
+section+section{border-top:1px solid var(--line)}
+h2{margin:0;font-weight:600;font-size:1.4rem;line-height:1.7;letter-spacing:.12em;text-wrap:balance}
+.eyebrow{font-family:var(--latin);font-style:italic;color:var(--gold);font-size:1.02rem;letter-spacing:.14em;margin:0 0 4px}
+.stack{display:flex;flex-direction:column;gap:1.3em}
+.soft{color:var(--ink-soft)}
+.center{text-align:center}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 32px;border-radius:999px;background:var(--gold);color:var(--night);font-weight:700;letter-spacing:.12em;text-decoration:none;font-size:1rem;box-shadow:0 8px 30px rgba(227,196,138,.25);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 36px rgba(227,196,138,.4)}
+.ghost{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;letter-spacing:.1em}
+.btn:focus-visible,.ghost:focus-visible,summary:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+.small{font-size:.8rem;color:var(--ink-soft);letter-spacing:.06em}
+.cta{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+
+/* ---------- hero ---------- */
+.hero{background:radial-gradient(110% 60% at 50% 72%,var(--night-2),var(--night) 70%);padding-block:max(20px,env(safe-area-inset-top,0px)) 72px}
+.brand{font-size:.85rem;letter-spacing:.2em;color:var(--gold)}
+.brand span{color:var(--ink-soft);margin:0 .5em}
+.nights{margin-top:56px;display:flex;flex-direction:column;gap:18px;font-size:clamp(1.02rem,4.3vw,1.25rem);line-height:1.9;letter-spacing:.08em}
+.nights p{color:var(--ink-soft)}
+.hero h1{margin:30px 0 0;font-weight:600;font-size:clamp(1.4rem,6vw,1.9rem);line-height:1.8;letter-spacing:.12em}
+.cards{margin:40px auto 0;width:min(100%,520px);aspect-ratio:1040/541;filter:drop-shadow(0 18px 40px rgba(0,0,0,.35))}
+.cards img{width:100%;height:100%;-webkit-mask-image:radial-gradient(ellipse 52% 60% at 50% 50%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 52% 60% at 50% 50%,#000 70%,transparent 100%)}
+.hero .pick{margin-top:22px;line-height:2}
+.hero .cta{margin-top:30px}
+
+/* ---------- morning ---------- */
+.post{margin-top:30px;border:1px solid var(--line);border-radius:14px;padding:22px 20px;background:rgba(255,255,255,.03)}
+.post .who{display:flex;align-items:center;gap:10px;font-size:.82rem;color:var(--ink-soft);letter-spacing:.06em}
+.post .who i{width:28px;height:28px;border-radius:50%;background:var(--night-2);border:1px solid var(--gold);display:grid;place-items:center;font-style:normal;color:var(--gold);font-size:.8rem}
+.post .q{margin-top:14px;font-weight:600;letter-spacing:.06em}
+.post ol{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.post li{display:grid;grid-template-columns:1.6em 1fr;font-size:.95rem}
+.post li b{color:var(--gold);font-family:var(--latin);font-size:1.1rem}
+.post .intro{margin-top:10px;font-size:.9rem;color:var(--ink-soft);line-height:1.9}
+.post .stats{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);display:flex;gap:18px;flex-wrap:wrap;font-size:.8rem;color:var(--gold);letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.post .foot{margin-top:12px;font-size:.85rem;color:var(--ink-soft)}
+.reply{margin:14px 0 0 auto;max-width:85%;border-radius:14px 14px 4px 14px;background:rgba(227,196,138,.1);padding:12px 16px;font-size:.9rem;line-height:1.9}
+.reply small{display:block;color:var(--gold);font-size:.74rem;letter-spacing:.08em}
+.note-ex{margin-top:8px;font-size:.75rem;color:var(--ink-soft);text-align:right}
+
+/* ---------- LINE ---------- */
+.gifts{margin-top:30px;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.gift{display:grid;grid-template-columns:7.4em 1fr;gap:4px 16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.gift .tag{grid-row:span 2;align-self:start;font-size:.72rem;letter-spacing:.1em;border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:2px 10px;line-height:1.8;white-space:nowrap;margin-top:4px;justify-self:start}
+.gift h3{margin:0;font-weight:600;font-size:1.05rem;letter-spacing:.1em}
+.gift p{font-size:.92rem;color:var(--ink-soft);min-width:0}
+.line-cta{margin-top:34px}
+
+/* ---------- samples ---------- */
+.wide{margin-top:28px;border-radius:8px;width:100%}
+.words{margin-top:28px;display:grid;gap:16px}
+.w{border:1px solid var(--line);border-radius:8px;padding:22px 20px;display:flex;flex-direction:column;gap:10px}
+.w h3{margin:0;font-weight:600;font-size:1.05rem;letter-spacing:.12em;color:var(--gold)}
+.w p{font-size:.93rem}
+.w ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:4px}
+.w li{font-size:.92rem;padding-left:1.2em;position:relative;color:var(--ink)}
+.w li::before{content:"";position:absolute;left:.2em;top:.85em;width:6px;height:6px;transform:rotate(45deg);background:var(--gold)}
+@media (min-width:640px){.words{grid-template-columns:1fr 1fr}}
+.samples{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.samples figure{margin:0;display:flex;flex-direction:column;gap:10px}
+.samples img{border-radius:6px;border:1px solid var(--line)}
+.samples figcaption{font-size:.82rem;line-height:1.8;color:var(--ink-soft);text-align:center}
+.samples figcaption b{display:block;color:var(--ink);font-weight:600;letter-spacing:.08em}
+.voice{margin:28px 0 0;padding:24px 22px;border-left:2px solid var(--gold);background:rgba(227,196,138,.05)}
+.voice p{font-size:1.05rem;line-height:2.1;letter-spacing:.06em}
+.voice p+p{margin-top:12px}
+.voice cite{display:block;margin-top:14px;font-style:normal;font-size:.8rem;color:var(--gold);letter-spacing:.08em}
+
+/* ---------- readings ---------- */
+.menu{display:grid;gap:16px;margin-top:30px}
+.item{border:1px solid var(--line);border-radius:8px;padding:22px 20px}
+.item.special{border-color:rgba(240,207,192,.45)}
+.item-head{display:flex;align-items:center;gap:12px}
+.item-head svg{flex:none}
+.item h3{margin:0;font-weight:600;font-size:1.1rem;letter-spacing:.12em}
+.price{margin-left:auto;font-family:var(--latin);font-size:1.35rem;color:var(--gold);font-variant-numeric:tabular-nums;white-space:nowrap}
+.special .price{color:var(--rose)}
+.item p{margin-top:12px;color:var(--ink-soft);font-size:.93rem}
+.item ul{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.item li{font-size:.76rem;letter-spacing:.06em;border:1px solid var(--line);border-radius:999px;padding:1px 12px}
+.menu-foot{margin-top:28px}
+.more{display:inline-block;margin-top:14px;font-size:.88rem;color:var(--gold);letter-spacing:.06em;text-underline-offset:4px}
+
+/* ---------- faq ---------- */
+.faq{margin-top:26px;border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:18px 34px 18px 0;position:relative;font-weight:600;letter-spacing:.06em;line-height:1.8}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:6px;top:50%;width:9px;height:9px;border-right:1px solid var(--gold);border-bottom:1px solid var(--gold);transform:translateY(-70%) rotate(45deg);transition:transform .25s}
+details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+details p{padding:0 0 20px;color:var(--ink-soft);font-size:.93rem}
+
+/* ---------- closing ---------- */
+.closing{text-align:center;position:relative;overflow:hidden;padding-block:170px 190px;border-top:0!important}
+.closing .bgimg{position:absolute;inset:0;margin:0 auto;max-width:760px;background:url(window.jpg) center 62%/cover no-repeat;opacity:.55;-webkit-mask-image:radial-gradient(ellipse 56% 40% at 50% 50%,#000 30%,rgba(0,0,0,.5) 60%,transparent 100%);mask-image:radial-gradient(ellipse 56% 40% at 50% 50%,#000 30%,rgba(0,0,0,.5) 60%,transparent 100%)}
+.closing .wrap{position:relative;text-shadow:0 2px 14px rgba(4,8,28,.9);display:flex;flex-direction:column;align-items:center;gap:22px}
+.closing h2{font-size:1.35rem;line-height:2}
+footer{padding-block:36px 56px;text-align:center;font-size:.78rem;color:var(--ink-soft)}
+footer nav{display:flex;justify-content:center;flex-wrap:wrap;gap:22px;margin-bottom:14px;font-family:var(--latin);font-size:1rem;letter-spacing:.14em}
+footer nav a{text-decoration:none;color:var(--gold)}
+footer p+p{margin-top:6px}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+@media (min-width:820px){
+  .hero .wrap{max-width:720px}
+  section{padding-block:104px}
+}
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap center">
+    <p class="brand">恋愛タロット<span>|</span>鏡子</p>
+    <div class="nights">
+      <p>あの人のことを考えて、眠れない夜。</p>
+      <p>返事の来ないスマホを、<br>何度も開いてしまう夜。</p>
+      <p>好きになってはいけない人を、<br>好きになった夜。</p>
+    </div>
+    <h1>その気持ちを、<br>タロットで言葉にします。</h1>
+    <div class="cards"><img src="cards3.jpg" alt="伏せた3枚のタロットカード" width="1040" height="541"></div>
+    <p class="pick">伏せた3枚から、直感で1枚。<br>今のあなたの恋に、言葉が届きます。</p>
+    <div class="cta">
+      <a class="btn" href="https://lin.ee/yVsBDxN" target="_blank" rel="noopener">LINEで今月のカードを引く</a>
+      <p class="small">無料・ニックネームのままで受け取れます</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section aria-labelledby="morning-h">
+    <div class="wrap">
+      <p class="eyebrow">Every morning</p>
+      <h2 id="morning-h">毎朝、気持ちを選ぶだけ</h2>
+      <p class="soft" style="margin-top:16px">Threadsでは毎朝、今の気持ちに近いものを選ぶ投稿をしています。記号ひとつで参加できて、一人ひとりに言葉を返しています。</p>
+      <div class="post" aria-label="11月16日の朝の投稿">
+        <div class="who"><i>鏡</i>kagamiko_tarot</div>
+        <p class="q">【新しい一週間、あの人を想って心に浮かぶのは】</p>
+        <p class="intro">週のはじまり、ふと、あの人のことを考える。<br>あなたの心に浮かぶのは、どれですか？</p>
+        <ol>
+          <li><b>A</b>今週こそ、会えたらいいな</li>
+          <li><b>B</b>声が聞きたい</li>
+          <li><b>C</b>この気持ち、どうしたらいいんだろう</li>
+          <li><b>D</b>何も変わらないまま、また一週間が始まる</li>
+        </ol>
+        <p class="foot">記号だけでも大丈夫です。</p>
+        <p class="stats"><span>閲覧 939</span><span>いいね 41</span><span>コメント 136</span></p>
+      </div>
+      <div class="reply"><small>D を選んだ方への返信</small>教えてくれてありがとうございます。Dなんですね。<br><br>何も変わらないまま、また一週間が始まる。予定は埋まっているのに、心は空白のままです。その空白に、あの人への想いが入ってくるのかもしれません。<br><br>その奥には、まだ言葉になっていない想いがあるはずです。また心が揺れたら、この場所で待っていますね。</div>
+      <p class="note-ex">2026年11月16日（月）の実際の投稿と返信より</p>
+      <div class="cta" style="margin-top:26px"><a class="ghost" href="https://www.threads.net/@kagamiko_tarot" target="_blank" rel="noopener">Threadsで朝の投稿を受け取る</a></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="line-h">
+    <div class="wrap">
+      <p class="eyebrow">On LINE</p>
+      <h2 id="line-h">LINEで受け取れるもの</h2>
+      <p class="soft" style="margin-top:16px">毎日届くことはありません。必要なときに、立ち寄ってください。</p>
+      <div class="gifts">
+        <div class="gift"><span class="tag">いつでも</span><h3>今月のカード</h3><p>伏せた3枚から1枚選ぶと、今のあなたの恋への言葉が届きます。カードは、新月ごとに入れ替わります。</p></div>
+        <div class="gift"><span class="tag">先にお知らせ</span><h3>無料鑑定「鏡の間」</h3><p>あなたのために1枚引いて、あの人の気持ちを言葉にする無料鑑定です。不定期・先着順で、Threadsより先にLINEでお知らせします。</p></div>
+        <div class="gift"><span class="tag">月に一度</span><h3>満月の夜の言葉</h3><p>満月の夜にだけ届く、LINE限定のメッセージです。</p></div>
+      </div>
+      <div class="cta line-cta">
+        <a class="btn" href="https://lin.ee/yVsBDxN" target="_blank" rel="noopener">LINEで今月のカードを引く</a>
+        <p class="small">ニックネームのままで、誰にも知られずに受け取れます</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="deliver-h">
+    <div class="wrap">
+      <p class="eyebrow">What arrives</p>
+      <h2 id="deliver-h">届くもの</h2>
+      <p class="soft" style="margin-top:16px">カードは1枚ずつ、手で引いています。届くのは、カードの絵だけではありません。あなたのために引いたカードから見えたことを、あなたのためだけの言葉にしてお届けします。</p>
+      <img class="wide" src="letter.jpg" alt="夜の机で、手紙に言葉を書く手" width="1200" height="628" loading="lazy">
+      <div class="words">
+        <div class="w">
+          <h3>鏡の間（無料鑑定）</h3>
+          <p>あなたのために引いた1枚から、あの人の気持ちを3つの層で言葉にします。</p>
+          <ul><li>表に出ている気持ち</li><li>心の奥にある気持ち</li><li>今、揺れていること</li></ul>
+          <p>そして、カードに映った、あなた自身の良いところも。</p>
+        </div>
+        <div class="w">
+          <h3>ライト鑑定</h3>
+          <p>2枚のカードそれぞれを、1枚ずつページを分けて言葉にします。</p>
+          <ul><li>あの人の今の気持ち</li><li>あなたの本音</li><li>2枚を並べて見えること</li></ul>
+          <p>最後に、あなたへのお守りの言葉を添えます。</p>
+        </div>
+      </div>
+      <p class="small" style="margin-top:34px">お届けするものの一部（見本）</p>
+      <div class="samples">
+        <figure><img src="sample_free.jpg" alt="無料鑑定でお届けするお守りの画像の見本" width="1122" height="1402" loading="lazy"><figcaption><b>鏡の間</b>言葉に添えるお守り</figcaption></figure>
+        <figure><img src="sample_light.jpg" alt="ライト鑑定の鑑定書の表紙の見本" width="1055" height="1491" loading="lazy"><figcaption><b>ライト鑑定</b>PDF鑑定書の表紙</figcaption></figure>
+      </div>
+      <p class="small center" style="margin-top:10px">お名前と日付は伏せています。</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="voice-h">
+    <div class="wrap">
+      <p class="eyebrow">Voices</p>
+      <h2 id="voice-h">受け取った方の声</h2>
+      <blockquote class="voice">
+        <p>「自分の幸せは、自分で決めていいんですね」</p>
+        <p>「最後の『幸せの形は、自分自身が決めていいもの』という言葉が、心に残りました」</p>
+        <cite>無料鑑定とライト鑑定を受けてくださった方</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="readings" aria-labelledby="read-h">
+    <div class="wrap">
+      <p class="eyebrow">For deeper nights</p>
+      <h2 id="read-h">深く悩む夜に</h2>
+      <p class="soft" style="margin-top:16px">あの人の気持ちを、もっと深く知りたいときのための鑑定です。知りたいことの深さで、選んでください。</p>
+      <div class="menu">
+        <article class="item">
+          <div class="item-head"><svg width="28" height="28" viewBox="-15 -15 30 30" aria-hidden="true"><path fill="#E3C48A" d="M2,-12 A12,12 0 1 0 2,12 A9,12 0 1 1 2,-12Z"/></svg><h3>ライト鑑定</h3><span class="price">¥2,000</span></div>
+          <p>あの人の今の気持ちと、あなたの本音を、2枚のカードで言葉にします。</p>
+          <ul><li>カード2枚</li><li>PDF鑑定書</li><li>3日以内にお届け</li></ul>
+        <a class="more" href="https://kagamiko.stores.jp/items/6a83c7820e072927ce833f72" target="_blank" rel="noopener">ライト鑑定の内容とお申し込み</a>
+        </article>
+        <article class="item">
+          <div class="item-head"><svg width="28" height="28" viewBox="-15 -15 30 30" aria-hidden="true"><circle r="12" fill="none" stroke="#E3C48A" stroke-width="1"/><path fill="#E3C48A" d="M0,-12 A12,12 0 0 1 0,12Z"/></svg><h3>本格鑑定</h3><span class="price">¥5,000</span></div>
+          <p>ふたりの流れ、あの人の行動の奥にある気持ち、あなたが踏み出せる小さな一歩まで。</p>
+          <ul><li>流れ・あの人の行動・次の一歩</li><li>PDF鑑定書</li><li>5日以内にお届け</li></ul>
+        <a class="more" href="https://kagamiko.stores.jp/items/6a83bf72d397ae0d5c8731f5" target="_blank" rel="noopener">本格鑑定の内容とお申し込み</a>
+        </article>
+        <article class="item special">
+          <div class="item-head"><svg width="28" height="28" viewBox="-15 -15 30 30" aria-hidden="true"><circle r="12" fill="#F0CFC0"/></svg><h3>特別鑑定</h3><span class="price">¥9,800</span></div>
+          <p>鑑定のあと2週間、日々のできごとを報告してください。その都度、言葉をお返しします。</p>
+          <ul><li>本格鑑定＋2週間のやりとり</li><li>毎月3名さままで</li></ul>
+        <a class="more" href="https://kagamiko.stores.jp/items/6a83c7de5d2d4e37a274eff0" target="_blank" rel="noopener">特別鑑定の内容とお申し込み</a>
+        </article>
+      </div>
+      <div class="cta menu-foot">
+        <p class="small">お届けした鑑定書や画像の転載・再配布は、ご遠慮ください。</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="place-h">
+    <div class="wrap stack">
+      <div><p class="eyebrow">This place is for you</p><h2 id="place-h">ここは、あなたのための場所です</h2></div>
+      <img class="wide" style="margin-top:0" src="draw.jpg" alt="ランタンの灯りの下で、広げたタロットカードから1枚を引く手" width="1200" height="628" loading="lazy">
+      <p>カードは、1枚1枚、手で引いています。</p>
+      <p>答えを押しつけることはしません。どうするかを選ぶのは、いつもあなたです。</p>
+      <p>あの人の心を決めつけることもしません。カードが映す可能性として、言葉にしてお伝えします。</p>
+      <p>うまく言葉にできなくても、まとまっていなくても大丈夫です。そのままの気持ちを、置いていってください。</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="faq-h">
+    <div class="wrap">
+      <p class="eyebrow">Questions</p>
+      <h2 id="faq-h">よくあるご質問</h2>
+      <div class="faq">
+        <details><summary>LINEに登録したら、毎日メッセージが届きますか？</summary><p>いいえ、毎日届くことはありません。満月の夜の言葉や、鏡の間のお知らせなど、ときどき届くだけです。今月のカードは、引きたいときにご自身で引けます。</p></details>
+        <details><summary>ニックネームのままでも、受けられますか？</summary><p>はい。本名をお伝えいただく必要はありません。やりとりが誰かに知られることもありません。</p></details>
+        <details><summary>あの人の気持ちを、当ててもらえますか？</summary><p>あの人の心を決めつけることはしません。カードが映す可能性として、あの人の気持ちを言葉にしてお伝えします。どう受け取るかは、あなたが選んでください。</p></details>
+        <details><summary>AIが占っているのですか？</summary><p>いいえ。カードは1枚1枚、手で引いています。カードを読み、あなたに届ける言葉を生み出しているのは、鏡子自身です。文章を整えたり画像を作ったりするときに、AIをサポートとして使うことはあります。</p></details>
+        <details><summary>鑑定のあとに、別の鑑定をすすめられますか？</summary><p>いいえ、こちらからおすすめすることはありません。また話したくなったときに、ご自身のタイミングで選んでください。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" aria-labelledby="close-h">
+    <div class="bgimg" aria-hidden="true"></div>
+    <div class="wrap">
+      <h2 id="close-h">あなたのタイミングで、<br>あなたが選ぶ未来へ。</h2>
+      <p>ここで、いつでもお待ちしています。</p>
+      <a class="btn" href="https://lin.ee/yVsBDxN" target="_blank" rel="noopener">LINEで今月のカードを引く</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav><a href="https://www.threads.net/@kagamiko_tarot" target="_blank" rel="noopener">Threads</a><a href="https://lin.ee/yVsBDxN" target="_blank" rel="noopener">LINE</a><a href="https://kagamiko.stores.jp" target="_blank" rel="noopener">STORES</a></nav>
+    <p>恋愛タロット｜鏡子</p>
+  </div>
+</footer>
+
+</body>
+</html>
